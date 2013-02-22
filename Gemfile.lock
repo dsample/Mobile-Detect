@@ -1,0 +1,12 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    json (1.7.7)
+    to_regexp (0.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json
+  to_regexp

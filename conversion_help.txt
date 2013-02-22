@@ -1,0 +1,13 @@
+Converting the PHP regex to JSON using your favourite regex-capable text
+editor.
+
+There's a little markup to change from PHP variable definition to the
+beginning of the JSON object, but after that you can pretty much use the
+following regex in find & replace, and also remove any PHP comments that
+might be in there.
+
+Find: "('[a-zA-Z]+')\s+=> ('[^']+')(,?)"
+Replace with: "  {\n    'category': \1,\n    'regex': \2\n  }\3"
+
+Remember to check the last items in the array parts of the object that
+it doesn't end with a comma.
