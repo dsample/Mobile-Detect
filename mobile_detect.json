@@ -191,6 +191,10 @@
 		{
 			"category": "WindowsTablet:IE",
 			"regex": "MSIE.*Windows NT.*ARM.*Touch"
+		},
+		{
+			"category": "AndroidOperaTablet",
+			"regex": "Opera.*Android.*Opera Tablet"
 		}
 	],
 
@@ -209,7 +213,7 @@
 		},
 		{
 			"category": "Windows:Opera",
-			"regex": ""
+			"regex": "(?!.*(Tablet|Mobile))Opera.*Windows"
 		},
 		{
 			"category": "Windows:Other",
@@ -229,7 +233,7 @@
 		},
 		{
 			"category": "OSX:Opera",
-			"regex": ""
+			"regex": "(?!.*(Tablet|Mobile))Opera.*Mac OS X"
 		},
 		{
 			"category": "OSX:Other",
@@ -249,7 +253,7 @@
 		},
 		{
 			"category": "Linux:Opera",
-			"regex": ""
+			"regex": "(?!.*(Tablet|Mobile))Opera.*Linux"
 		}
 	]
 }

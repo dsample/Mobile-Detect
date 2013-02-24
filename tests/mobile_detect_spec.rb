@@ -4,7 +4,7 @@ describe Detect do
 	before(:all) do
 		@detect = Detect.new
 		@detect.load_json
-		@test_devices = CSV.open(File.dirname(__FILE__) + "/test_data.csv")
+		@test_devices = CSV.open(File.dirname(__FILE__) + "/test_devices.csv")
 	end
 	
 	it "detects all devices correctly" do
