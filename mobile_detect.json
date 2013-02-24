@@ -60,6 +60,10 @@
 		{
 			"category": "WindowsPhone",
 			"regex": "MSIE.*Windows Phone.*IEMobile"
+		},
+		{
+			"category": "AndroidOpera",
+			"regex": "Opera.*Android.*Opera Mobile"
 		}
 	],
 
