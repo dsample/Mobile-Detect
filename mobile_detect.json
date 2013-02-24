@@ -23,11 +23,11 @@
 		},
 		{
 			"category": "Dell",
-			"regex": "Dell.*Streak|Dell.*Aero|Dell.*Venue|DELL.*Venue Pro|Dell Flash|Dell Smoke|Dell Mini 3iX|XCD28|XCD35|\\b001DL\\b|\\b101DL\\b|\\bGS01\\b"
+			"regex": "Dell.*Streak|Dell.*Aero|Dell.*Venue|DELL.*Venue Pro|Dell Flash|Dell Smoke|Dell Mini 3iX|XCD28|XCD35|\b001DL\b|\b101DL\b|\bGS01\b"
 		},
 		{
 			"category": "Motorola",
-			"regex": "Motorola|\\bDroid\\b.*Build|DROIDX|Android.*Xoom|HRI39|MOT-|A1260|A1680|A555|A853|A855|A953|A955|A956|Motorola.*ELECTRIFY|Motorola.*i1|i867|i940|MB200|MB300|MB501|MB502|MB508|MB511|MB520|MB525|MB526|MB611|MB612|MB632|MB810|MB855|MB860|MB861|MB865|MB870|ME501|ME502|ME511|ME525|ME600|ME632|ME722|ME811|ME860|ME863|ME865|MT620|MT710|MT716|MT720|MT810|MT870|MT917|Motorola.*TITANIUM|WX435|WX445|XT300|XT301|XT311|XT316|XT317|XT319|XT320|XT390|XT502|XT530|XT531|XT532|XT535|XT603|XT610|XT611|XT615|XT681|XT701|XT702|XT711|XT720|XT800|XT806|XT860|XT862|XT875|XT882|XT883|XT894|XT909|XT910|XT912|XT928"
+			"regex": "Motorola|\bDroid\b.*Build|DROIDX|Android.*Xoom|HRI39|MOT-|A1260|A1680|A555|A853|A855|A953|A955|A956|Motorola.*ELECTRIFY|Motorola.*i1|i867|i940|MB200|MB300|MB501|MB502|MB508|MB511|MB520|MB525|MB526|MB611|MB612|MB632|MB810|MB855|MB860|MB861|MB865|MB870|ME501|ME502|ME511|ME525|ME600|ME632|ME722|ME811|ME860|ME863|ME865|MT620|MT710|MT716|MT720|MT810|MT870|MT917|Motorola.*TITANIUM|WX435|WX445|XT300|XT301|XT311|XT316|XT317|XT319|XT320|XT390|XT502|XT530|XT531|XT532|XT535|XT603|XT610|XT611|XT615|XT681|XT701|XT702|XT711|XT720|XT800|XT806|XT860|XT862|XT875|XT882|XT883|XT894|XT909|XT910|XT912|XT928"
 		},
 		{
 			"category": "Samsung",
@@ -98,7 +98,7 @@
 		},
 		{
 			"category": "AcerTablet",
-			"regex": "Android.*\\b(A100|A101|A200|A500|A501|A510|A700|A701|W500|W500P|W501|W501P|G100|G100W)\\b"
+			"regex": "Android.*\b(A100|A101|A200|A500|A501|A510|A700|A701|W500|W500P|W501|W501P|G100|G100W)\b"
 		},
 		{
 			"category": "ToshibaTablet",
@@ -106,7 +106,7 @@
 		},
 		{
 			"category": "LGTablet",
-			"regex": "\\bL-06C|LG-V900|LG-V909"
+			"regex": "\bL-06C|LG-V900|LG-V909"
 		},
 		{
 			"category": "YarvikTablet",
@@ -114,7 +114,7 @@
 		},
 		{
 			"category": "MedionTablet",
-			"regex": "Android.*\\bOYO\\b|LIFE.*(P9212|P9514|P9516|S9512)|LIFETAB"
+			"regex": "Android.*\bOYO\b|LIFE.*(P9212|P9514|P9516|S9512)|LIFETAB"
 		},
 		{
 			"category": "ArnovaTablet",
@@ -142,7 +142,7 @@
 		},
 		{
 			"category": "SMiTTablet",
-			"regex": "Android.*(\\bMID\\b|MID-560|MTV-T1200|MTV-PND531|MTV-P1101|MTV-PND530)"
+			"regex": "Android.*(\bMID\b|MID-560|MTV-T1200|MTV-PND531|MTV-P1101|MTV-PND530)"
 		},
 		{
 			"category": "RockChipTablet",
@@ -166,11 +166,11 @@
 		},
 		{
 			"category": "NecTablet",
-			"regex": "\\bN-06D|\\bN-08D"
+			"regex": "\bN-06D|\bN-08D"
 		},
 		{
 			"category": "NabiTablet",
-			"regex": "Android.*\\bNabi"
+			"regex": "Android.*\bNabi"
 		},
 		{
 			"category": "PlaystationTablet",
@@ -178,7 +178,11 @@
 		},
 		{
 			"category": "GenericTablet",
-			"regex": "Android.*\\b97D\\b|Tablet(?!.*PC)|ViewPad7|MID7015|BNTV250A|LogicPD Zoom2|\\bA7EB\\b|CatNova8|A1_07|CT704|CT1002|\\bM721\\b|hp-tablet"
+			"regex": "Android.*\b97D\b|Tablet(?!.*PC)|ViewPad7|MID7015|BNTV250A|LogicPD Zoom2|\bA7EB\b|CatNova8|A1_07|CT704|CT1002|\bM721\b|hp-tablet"
+		},
+		{
+			"category": "WindowsTablet:IE",
+			"regex": "MSIE.*Windows NT.*ARM.*Touch"
 		}
 	]
 }
