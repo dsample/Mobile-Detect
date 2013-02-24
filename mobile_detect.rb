@@ -7,26 +7,30 @@ class Detect
 	end
 	
 	def device_type(ua)
-		mobiles = check_against_patterns ua, @rules['mobiles']
-		tablets = check_against_patterns ua, @rules['tablets']
+	
+		device_types = ["mobile", "tablet", "desktop"]
+
+		results = Hash.new
 		result = Hash.new
+
+		device_types.each do |type|
+			matches = check_against_patterns ua, @rules[type]
+			results[type] = matches unless matches.count == 0
+		end
 		
-		if mobiles.count > 0 && tablets.count > 0
-			result["type"] = "both"
-			mobiles.map!{|m| "mobile:" + m}
-			tablets.map!{|t| "tablet:" + t}
-			result["categories"] = (mobiles | tablets).join(",")
-		elsif mobiles.count > 0 && tablets.count == 0
-			result["type"] = "mobile"
-			mobiles.map!{|m| "mobile:" + m}
-			result["categories"] = (mobiles | tablets).join(",")
-		elsif mobiles.count == 0 && tablets.count > 0
-			result["type"] = "tablet"
-			tablets.map!{|t| "tablet:" + t}
-			result["categories"] = (mobiles | tablets).join(",")
-		else
+		if results.count == 0
 			result["type"] = "none"
-			result["categories"] = ""
+			result["categories"] = "none"
+		else
+			categories = Array.new
+			results.each do |key, value|
+				value.each do |category|
+					categories << key + ":" + category
+				end
+			end
+			
+			result["type"] = results.keys.join(",")
+			result["categories"] = categories.join(",")
 		end
 		
 		return result
@@ -49,15 +53,17 @@ class Detect
 			end
 		end
 	end
-
+	
 	def check_against_patterns(subject, patterns_json)
 		matches = Array.new
 		patterns_json.each do |o|
-			if subject =~ ("/" + o['regex'] + "/").to_regexp
-				#puts "1: " + o['category'] + " : " + o['regex']
-				matches << o['category']
-			else
-				#puts "0: " + o['category'] + " : " + o['regex']
+			unless o['regex'].empty?
+				if subject =~ ("/" + o['regex'] + "/").to_regexp
+					puts "1: " + o['category'] + " : " + o['regex']
+					matches << o['category']
+				else
+					puts "0: " + o['category'] + " : " + o['regex']
+				end
 			end
 		end
 		return matches

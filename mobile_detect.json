@@ -4,7 +4,7 @@
 		"date": "2013-02-21"
 	},
 	
-	"mobiles": [
+	"mobile": [
 		{
 			"category": "iPhone",
 			"regex": "\biPhone.*Mobile|\biPod|\biTunes"
@@ -59,7 +59,7 @@
 		}
 	],
 
-	"tablets": [
+	"tablet": [
 		{
 			"category": "iPad",
 			"regex": "iPad|iPad.*Mobile"
@@ -183,6 +183,69 @@
 		{
 			"category": "WindowsTablet:IE",
 			"regex": "MSIE.*Windows NT.*ARM.*Touch"
+		}
+	],
+
+	"desktop": [
+		{
+			"category": "Windows:IE",
+			"regex": "MSIE.*Windows.*(?!Touch)"
+		},
+		{
+			"category": "Windows:Chrome",
+			"regex": ""
+		},
+		{
+			"category": "Windows:Firefox",
+			"regex": ""
+		},
+		{
+			"category": "Windows:Opera",
+			"regex": ""
+		},
+		{
+			"category": "Windows:Other",
+			"regex": ""
+		},
+		{
+			"category": "OSX:Safari",
+			"regex": ""
+		},
+		{
+			"category": "OSX:Chrome",
+			"regex": ""
+		},
+		{
+			"category": "OSX:Firefox",
+			"regex": ""
+		},
+		{
+			"category": "OSX:Opera",
+			"regex": ""
+		},
+		{
+			"category": "OSX:Other",
+			"regex": ""
+		},
+		{
+			"category": "Linux:Konquerer",
+			"regex": ""
+		},
+		{
+			"category": "Linux:Chrome",
+			"regex": ""
+		},
+		{
+			"category": "Linux:Chromium",
+			"regex": ""
+		},
+		{
+			"category": "Linux:Firefox",
+			"regex": ""
+		},
+		{
+			"category": "Linux:Opera",
+			"regex": ""
 		}
 	]
 }
