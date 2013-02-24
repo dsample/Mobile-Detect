@@ -56,6 +56,10 @@
 		{
 			"category": "Fly",
 			"regex": "IQ230|IQ444|IQ450|IQ440|IQ442|IQ441|IQ245|IQ256|IQ236|IQ255|IQ235|IQ245|IQ275|IQ240|IQ285|IQ280|IQ270|IQ260|IQ250"
+		},
+		{
+			"category": "WindowsPhone",
+			"regex": "MSIE.*Windows Phone.*IEMobile"
 		}
 	],
 
@@ -189,7 +193,7 @@
 	"desktop": [
 		{
 			"category": "Windows:IE",
-			"regex": "MSIE.*Windows.*(?!Touch)"
+			"regex": "(?!.*(Touch|Mobile))MSIE.*Windows"
 		},
 		{
 			"category": "Windows:Chrome",
@@ -233,15 +237,11 @@
 		},
 		{
 			"category": "Linux:Chrome",
-			"regex": ""
-		},
-		{
-			"category": "Linux:Chromium",
-			"regex": ""
+			"regex": "(?!.*Android)Linux.*Chrome"
 		},
 		{
 			"category": "Linux:Firefox",
-			"regex": ""
+			"regex": "Linux.*Firefox"
 		},
 		{
 			"category": "Linux:Opera",

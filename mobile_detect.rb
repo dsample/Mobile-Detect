@@ -37,7 +37,7 @@ class Detect
 	end
 	
 	def is_mobile(ua)
-		categories = check_against_patterns ua, @rules['mobiles']
+		categories = check_against_patterns ua, @rules['mobile']
 		if categories.count > 0
 			categories.each do |c|
 				puts c
@@ -46,7 +46,7 @@ class Detect
 	end
 	
 	def is_tablet(ua)
-		categories = check_against_patterns ua, @rules['tablets']
+		categories = check_against_patterns ua, @rules['tablet']
 		if categories.count > 0
 			categories.each do |c|
 				puts c
@@ -59,20 +59,13 @@ class Detect
 		patterns_json.each do |o|
 			unless o['regex'].empty?
 				if subject =~ ("/" + o['regex'] + "/").to_regexp
-					puts "1: " + o['category'] + " : " + o['regex']
+					#puts "1: " + o['category'] + " : " + o['regex']
 					matches << o['category']
 				else
-					puts "0: " + o['category'] + " : " + o['regex']
+					#puts "0: " + o['category'] + " : " + o['regex']
 				end
 			end
 		end
 		return matches
 	end
 end
-
-#detect = Detect.new
-#detect.load_json
-#ua = "Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10"
-#puts detect.device_type ua
-#ua = "Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19"
-#puts detect.device_type ua
