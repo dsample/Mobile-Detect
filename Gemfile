@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'rake'
+
 gem 'json'
 gem 'to_regexp'
 
