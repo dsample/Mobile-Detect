@@ -20,8 +20,20 @@ csvfile = CSV.open(usage_data_file)
 
 verbose = true if ARGV.include?("-v") || ARGV.include?("--verbose")
 
-CSV.open(output_file, 'wb') do |csv_out|
+number_of_columns = nil
+
+CSV.open(output_file, 'wb', {:force_quotes => true}) do |csv_out|
 	csvfile.each do |row|
+		if number_of_columns.nil?
+			number_of_columns = row.count
+		else
+			if (row.count - number_of_columns) > 0
+				row[ua_column] = row[ua_column,(row.count - number_of_columns + 1)].join(',')
+				while row.count > number_of_columns
+					row.delete_at(ua_column + 1)
+				end
+			end
+		end
 		device = detect.device_type row[ua_column]
 		
 		if add_columns
