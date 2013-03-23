@@ -1,6 +1,6 @@
 require 'csv'
 
-require_relative 'mobile_detect'
+require_relative 'lib/mobile_detect'
 
 usage_data_file = "usage_data.csv"
 ua_column = 1
