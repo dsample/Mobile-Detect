@@ -11,3 +11,5 @@ Windows Phone 8,mobile,"Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; T
 Linux Firefox,desktop,"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:19.0) Gecko/20100101 Firefox/19.0"
 Linux Opera,desktop,"Opera/9.80 (X11; Linux i686) Presto/2.12.388 Version/12.11"
 Nexus 7 Opera,tablet,"Opera/9.80 (Android 4.2.2; Linux; Opera Tablet/ADR-1301080958) Presto/2.11.355 Version/12.10"
+Nexus One FRF91,mobile,"Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+Nexus One ERD62,mobile,"Mozilla/5.0 (Linux; U; Android 2.1; en-us; Nexus One Build/ERD62) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17"
