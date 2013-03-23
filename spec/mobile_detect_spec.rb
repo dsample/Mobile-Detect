@@ -1,4 +1,4 @@
-require_relative '../mobile_detect'
+require_relative '../lib/mobile_detect'
 require 'csv'
 describe Detect do
 	before(:all) do
