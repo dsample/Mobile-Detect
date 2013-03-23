@@ -8,7 +8,7 @@ class Detect
 	
 	def device_type(ua)
 	
-		device_types = ["mobile", "tablet", "desktop"]
+		device_types = ["mobile", "tablet", "desktop", "console"]
 
 		results = Hash.new
 		result = Hash.new
@@ -58,7 +58,8 @@ class Detect
 		matches = Array.new
 		patterns_json.each do |o|
 			unless o['regex'].empty?
-				if subject =~ ("/" + o['regex'] + "/").to_regexp
+			  #puts o['regex']
+				if subject =~ ("/" + o['regex'] + "/i").to_regexp
 					#puts "1: " + o['category'] + " : " + o['regex']
 					matches << o['category']
 				else
