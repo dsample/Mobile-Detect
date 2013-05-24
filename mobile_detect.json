@@ -7,7 +7,7 @@
 	"mobile": [
 		{
 			"category": "iPhone",
-			"regex": "^(?!.*CriOS).*(iPhone|iPod|iTunes)"
+			"regex": "^(?!.*(CriOS|iPad)).*(iPhone|iPod|iTunes)"
 		},
 		{
 			"category": "iPhone:Chrome",

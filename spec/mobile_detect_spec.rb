@@ -1,5 +1,10 @@
 require_relative '../lib/mobile_detect'
 require 'csv'
+
+require 'coveralls'
+Coveralls.wear!
+
+
 describe Detect do
 	before(:all) do
 		@detect = Detect.new
@@ -10,7 +15,7 @@ describe Detect do
 	it "detects all devices correctly" do
 		@test_devices.each do |row|
 			detection = @detect.device_type(row[2])
-			expect(detection["type"]).to eq(row[1]), "Device: " + row[0] + " detect as " + detection["type"]
+			expect(detection["type"]).to eq(row[1]), "Device: " + row[0] + " detect as " + detection["type"] + detection['categories'].inspect
 			#detection["type"].should be(row[1]), "Device: " + row[0] + " detected as " + detection["type"] + " instead of " + row[1]
 		end
 	end
