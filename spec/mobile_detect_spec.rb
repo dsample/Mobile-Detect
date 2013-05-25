@@ -1,9 +1,6 @@
+require 'spec_helper'
 require_relative '../lib/mobile_detect'
 require 'csv'
-
-require 'coveralls'
-Coveralls.wear!
-
 
 describe Detect do
 	before(:all) do

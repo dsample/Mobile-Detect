@@ -37,16 +37,15 @@ class Detect
 	end
 	
 	def is_mobile(ua)
-		categories = check_against_patterns ua, @rules['mobile']
-		if categories.count > 0
-			categories.each do |c|
-				puts c
-			end
-		end
+		is_type?('mobile', ua)
 	end
 	
 	def is_tablet(ua)
-		categories = check_against_patterns ua, @rules['tablet']
+		is_type?('tablet', ua)
+	end
+	
+	def is_type?(device_type, ua)
+		categories = check_against_patterns ua, @rules[device_type]
 		if categories.count > 0
 			categories.each do |c|
 				puts c
