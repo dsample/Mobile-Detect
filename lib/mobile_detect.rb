@@ -36,11 +36,11 @@ class Detect
 		return result
 	end
 	
-	def is_mobile(ua)
+	def is_mobile?(ua)
 		is_type?('mobile', ua)
 	end
 	
-	def is_tablet(ua)
+	def is_tablet?(ua)
 		is_type?('tablet', ua)
 	end
 	
