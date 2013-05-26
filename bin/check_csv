@@ -3,54 +3,99 @@
 dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(dir) unless $LOAD_PATH.include?(dir)
 require 'mobile_detect'
-#require 'optparse'
-
+require 'optparse'
 require 'csv'
 
+defaults = {}
+defaults[:input] = 'usage_data.csv'
+defaults[:output] = "processed_#{defaults[:input]}"
+defaults[:ua_column] = 1
+defaults[:force] = false
+defaults[:verbose] = false
 
-usage_data_file = "usage_data.csv"
-ua_column = 1
+
+options = defaults.tap do |options|
+	OptionParser.new do |opts|
+		opts.version = Mobile_Detect::VERSION
+		opts.banner = 'Usage: check_csv [options]'
+
+		opts.separator ""
+		opts.separator "Options:"
+
+		opts.on("-i", "--input [file]", "Input CSV file (default: #{defaults[:input]})") do |input|
+			options[:input] = input
+		end
+
+		opts.on("-c", "--column [column]", Integer, "Useragent column (zero-based) (default: #{options[:ua_column]})") do |column|
+			options[:ua_column] = column
+		end
+
+		opts.on("-o", "--output [file]", "Output CSV file (default: #{defaults[:output]})") do |output|
+			options[:output] = output
+		end
+
+		opts.on("-f", "--overwrite", "Force overwriting of output file if it exists") do
+			options[:force] = true
+		end
+
+		opts.separator ""
+
+		opts.on("-v", "--verbose", "Print verbose output") do
+			options[:verbose] = true
+		end
+
+		opts.on("-h", "--help", "Display this screen") do
+			puts opts
+			exit
+		end
+
+	end.parse!
+end
+
+ua_column = options[:ua_column]
 
 add_columns = true
 
-usage_data_file = ARGV[0] if ARGV[0] && ARGV[0] != '--'
-ua_column = ARGV[1].to_i if ARGV[1] && ARGV[1] != '--'
-output_file = ARGV[2] if ARGV[2] && ARGV[2] != '--'
+input_path = File.join(Dir.pwd, options[:input])
+output_path = File.join(Dir.pwd, options[:output])
 
-output_file = File.dirname(usage_data_file) + "/updated_" + File.basename(usage_data_file) unless output_file
+abort "Input file does not exist" unless File.exists?(input_path)
+abort "Output file already exists" if File.exists?(output_path) && !options[:force]
 
-detect = Detect.new
+detect = Mobile_Detect::Detect.new
 detect.load_json
 
-csvfile = CSV.open(usage_data_file)
+begin
+	csvfile = CSV.open(input_path)
 
-verbose = true if ARGV.include?("-v") || ARGV.include?("--verbose")
+	verbose = options[:verbose]
 
-number_of_columns = nil
+	number_of_columns = nil
 
-CSV.open(output_file, 'wb', {:force_quotes => true}) do |csv_out|
-	csvfile.each do |row|
-		if number_of_columns.nil?
-			number_of_columns = row.count
-		else
-			if (row.count - number_of_columns) > 0
-				row[ua_column] = row[ua_column,(row.count - number_of_columns + 1)].join(',')
-				while row.count > number_of_columns
-					row.delete_at(ua_column + 1)
+	CSV.open(output_path, 'wb', {:force_quotes => true}) do |csv_out|
+		csvfile.each do |row|
+			if number_of_columns.nil?
+				number_of_columns = row.count
+			else
+				if (row.count - number_of_columns) > 0
+					row[options[:ua_column]] = row[options[:ua_column],(row.count - number_of_columns + 1)].join(',')
+					while row.count > number_of_columns
+						row.delete_at(options[:ua_column] + 1)
+					end
 				end
 			end
-		end
-		device = detect.device_type row[ua_column]
+			device = detect.device_type row[options[:ua_column]]
 		
-		if add_columns
-			row << device['type']
-			row << device['categories']
-		end
+			if add_columns
+				row << device['type']
+				row << device['categories']
+			end
 		
-		puts(row[0] + ": " + device['type'] + ": " + device['categories']) if verbose
+			puts(row[0] + ": " + device['type'] + ": " + device['categories']) if verbose
 
-		csv_out << row
+			csv_out << row
+		end
 	end
+ensure
+	csvfile.close
 end
-
-csvfile.close
