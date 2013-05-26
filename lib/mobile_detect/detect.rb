@@ -46,9 +46,10 @@ class Detect
 	def is_type?(device_type, ua)
 		categories = check_against_patterns ua, @rules[device_type]
 		if categories.count > 0
-			categories.each do |c|
-				puts c
-			end
+			return true
+#			categories.each do |c|
+#				return true
+#			end
 		end
 	end
 	

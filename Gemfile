@@ -11,4 +11,5 @@ gem 'to_regexp'
   gem 'rspec', :require => false
   gem 'coveralls', :require => false
   gem 'simplecov', :require => false
+  gem 'simplecov-gem-adapter', :require => false
 #end

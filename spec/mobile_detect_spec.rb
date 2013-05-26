@@ -7,7 +7,7 @@ describe Mobile_Detect::Detect do
 		@test_devices = CSV.open(File.join(File.dirname(__FILE__), '..', 'tests', 'test_devices.csv'))
 	end
 	
-	describe "test_devices" do
+	describe "device_type" do
 	
 		it "detects all test devices correctly" do
 			@test_devices.each do |row|

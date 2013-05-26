@@ -1,6 +1,6 @@
 ![Mobile Detect](http://demo.mobiledetect.net/logo-github.png) Ruby Gem
 
-[![Build Status](https://travis-ci.org/dsample/Mobile-Detect.png?branch=master)](https://travis-ci.org/dsample/Mobile-Detect) [![Coverage Status](https://coveralls.io/repos/dsample/Mobile-Detect/badge.png?branch=master)](https://coveralls.io/r/dsample/Mobile-Detect?branch=master) [![Code Climate](https://codeclimate.com/github/dsample/Mobile-Detect.png)](https://codeclimate.com/github/dsample/Mobile-Detect)
+[![Build Status](https://travis-ci.org/dsample/Mobile-Detect.png?branch=master)](https://travis-ci.org/dsample/Mobile-Detect) [![Coverage Status](https://coveralls.io/repos/dsample/Mobile-Detect/badge.png?branch=master)](https://coveralls.io/r/dsample/Mobile-Detect?branch=master) [![Code Climate](https://codeclimate.com/github/dsample/Mobile-Detect.png)](https://codeclimate.com/github/dsample/Mobile-Detect) [![Dependency Status](https://gemnasium.com/dsample/Mobile-Detect.png)](https://gemnasium.com/dsample/Mobile-Detect)
 
 ### A versatile mobile device detection gem
 

@@ -32,6 +32,8 @@ GEM
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
+    simplecov-gem-adapter (1.0.1)
+      simplecov
     simplecov-html (0.7.1)
     thor (0.18.1)
     to_regexp (0.2.1)
@@ -46,4 +48,5 @@ DEPENDENCIES
   rake
   rspec
   simplecov
+  simplecov-gem-adapter
   to_regexp
