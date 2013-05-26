@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gemspec
+
 gem 'rake'
 
 gem 'json', '~> 1.7.7'

@@ -1,12 +1,10 @@
 require 'spec_helper'
-require_relative '../lib/mobile_detect'
-require 'csv'
 
-describe Detect do
+describe Mobile_Detect::Detect do
 	before(:all) do
-		@detect = Detect.new
+		@detect = Mobile_Detect::Detect.new
 		@detect.load_json
-		@test_devices = CSV.open(File.dirname(__FILE__) + "/../tests/test_devices.csv")
+		@test_devices = CSV.open(File.join(File.dirname(__FILE__), '..', 'tests', 'test_devices.csv'))
 	end
 	
 	describe "test_devices" do

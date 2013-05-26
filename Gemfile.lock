@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    mobile_detect (1.0)
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,6 +42,7 @@ PLATFORMS
 DEPENDENCIES
   coveralls
   json (~> 1.7.7)
+  mobile_detect!
   rake
   rspec
   simplecov
