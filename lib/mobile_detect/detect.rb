@@ -1,5 +1,4 @@
-require 'json'
-require 'to_regexp'
+module Mobile_Detect
 class Detect
 	def load_json
 		@rules = JSON.parse(IO.read('mobile_detect.json'))
@@ -68,4 +67,5 @@ class Detect
 		end
 		return matches
 	end
+end
 end
