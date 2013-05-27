@@ -4,7 +4,7 @@ gemspec
 
 gem 'rake'
 
-gem 'json', '~> 1.7.7'
+gem 'json'
 gem 'to_regexp'
 
 #group :test do
