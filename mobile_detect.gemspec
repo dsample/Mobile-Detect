@@ -12,7 +12,9 @@ Gem::Specification.new do |gem|
 	gem.homepage	= 'https://github.com/dsample/Mobile-Detect'
 	gem.license	= 'Apache2'
 
-	gem.add_dependency 'json'
+	gem.add_runtime_dependency 'json'
+	gem.add_runtime_dependency 'to_regexp'
+	gem.add_runtime_dependency 'rake'
 
 	gem.files	= `git ls-files`.split($/)
 	gem.executables	= gem.files.grep(%r{^bin/}).map{|f| File.basename(f)}
